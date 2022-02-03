@@ -29,16 +29,5 @@ bool is_anagram(std::string str1,std::string str2)
     map1[str1[i]]++;
     map2[str2[i]]++;
   }
-  std::map<char, int>::iterator it1 = map1.begin();
-  std::map<char, int>::iterator it2 = map2.begin();
-  while(it1 != map1.end() && it2 != map2.end())
-  {
-    if (it1->first != it2->first || it1->second != it2->second)
-      return false;
-    it1++;
-    it2++;
-  }
-  if (it1 != map1.end() || it2 != map2.end())
-    return false;
-  return true;
+  return map1 == map2;
 }
